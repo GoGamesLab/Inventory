@@ -5,7 +5,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/GoGamesLab/Inventory/container"
+	"github.com/GoGamesLab/Inventory/pkg/container"
 )
 
 var Logger = slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{Level: slog.LevelInfo}))
