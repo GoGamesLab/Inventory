@@ -1,10 +1,8 @@
 package container
 
-func RegisterItem(i Item) bool {
-	if _, exists := ItemRegister[i.ID]; exists {
-		return false
-	}
+func RegisterNewItem(i Item) (Item, bool) {
+	i.ID = ItemID(len(ItemRegister) + 1)
 	ItemRegister[i.ID] = i
 
-	return true
+	return i, true
 }
