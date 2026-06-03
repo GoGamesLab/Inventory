@@ -11,7 +11,7 @@ import (
 var Logger = slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{Level: slog.LevelInfo}))
 
 func main() {
-	Logger.Info("🧳 Invetory control start")
+	Logger.Info("🧳 Inventory control start")
 
 	i1 := container.NewInventory()
 
