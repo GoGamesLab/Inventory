@@ -13,10 +13,6 @@ type Item struct {
 	Name string
 }
 
-var (
-	ItemRegister = make(map[ItemID]Item)
-)
-
 type Container[V Numeric] struct {
 	Items map[ItemID]V
 }

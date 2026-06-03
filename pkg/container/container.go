@@ -138,9 +138,5 @@ func (c *Container[T]) GetItem(id ItemID) (T, bool) {
 		return zero, false
 	}
 
-	if _, ok := ItemRegister[id]; !ok {
-		return zero, false
-	}
-
 	return c.Items[id], true
 }

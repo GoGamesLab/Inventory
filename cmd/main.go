@@ -15,9 +15,9 @@ func main() {
 
 	i1 := container.NewInventory()
 
-	it1, _ := container.RegisterNewItem(container.Item{Name: "Item 1"})
-	it2, _ := container.RegisterNewItem(container.Item{Name: "Item 2"})
-	it3, _ := container.RegisterNewItem(container.Item{Name: "Item 3"})
+	it1 := container.Item{ID: 1, Name: "Item 1"}
+	it2 := container.Item{ID: 2, Name: "Item 2"}
+	it3 := container.Item{ID: 3, Name: "Item 3"}
 
 	i1.AddItem(it1.ID, 10)
 	i1.RemoveItem(it1.ID, 5)
@@ -33,9 +33,7 @@ func main() {
 		Logger.Info("🧨 Item 4 não deveria ser removido")
 	}
 
-	for id, quantity := range i1.Items {
-		if item, ok := container.ItemRegister[id]; ok {
-			Logger.Info(fmt.Sprintf("🏷️ Item %s, quantity %d", item.Name, quantity))
-		}
+	for i, quantity := range i1.Items {
+		Logger.Info(fmt.Sprintf("🏷️ Item %d quantity %d", i, quantity))
 	}
 }
