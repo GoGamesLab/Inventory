@@ -9,8 +9,7 @@ type Numeric interface {
 }
 
 type Item struct {
-	ID   ItemID
-	Name string
+	ID ItemID
 }
 
 type Container[V Numeric] struct {
