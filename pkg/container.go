@@ -112,11 +112,13 @@ func (c *Container[T]) RemoveItem(id ItemID, amount T) (T, bool) {
 		}
 		currentAmount = val
 
+		var newAmount float32
 		if currentAmount < a {
-			return T(currentAmount), false
+			newAmount = 0.0
+		} else {
+			newAmount = currentAmount - a
 		}
 
-		newAmount := currentAmount - a
 		if newAmount <= 0.0001 {
 			delete(c.Items, id)
 
