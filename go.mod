@@ -1,3 +1,3 @@
 module github.com/GoGamesLab/Inventory
 
-go 1.26.1
+go 1.27
